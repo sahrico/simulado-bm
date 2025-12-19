@@ -257,6 +257,12 @@ function checkAnswer() {
   if (ans !== q.correct) learning.push(q);
   else score++;
 
+  document.querySelector('.explanation')?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+ });
+
+
   document.getElementById("nextBtn").classList.remove("hidden");
   document.getElementById("nextBtn").onclick = nextQuestion;
 }
