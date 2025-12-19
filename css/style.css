@@ -126,17 +126,23 @@ main {
 ========================= */
 
 .options label {
-  display: block;
-  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   cursor: pointer;
   transition: background 0.2s, border 0.2s;
 }
 
+.options label:active {
+  background: #eef3f7;
+}
+
 .options input {
-  margin-right: 8px;
+  margin-top: 3px;
 }
 
 .correct {
@@ -302,4 +308,45 @@ button {
     font-size: 15px;
     width: 100%;
   }
+}
+
+
+@keyframes popFeedback {
+  0% { transform: scale(0.97); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.correct,
+.incorrect {
+  animation: popFeedback 0.25s ease-out;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark main {
+  background: #1e1e1e;
+}
+
+body.dark header {
+  background: #000;
+}
+
+body.dark .options label {
+  background: #1f1f1f;
+  border-color: #333;
+}
+
+body.dark .progress-bar {
+  background: #333;
+}
+
+body.dark .progress-fill {
+  background: #90caf9;
 }
